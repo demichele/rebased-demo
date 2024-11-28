@@ -1,0 +1,9 @@
+[package]
+name = "token_transfer_tutorial"
+edition = "2024.beta"
+
+[dependencies]
+Iota = { local = "../../../crates/iota-framework/packages/iota-framework" }
+
+[addresses]
+token_transfer_tutorial = "0x0"
