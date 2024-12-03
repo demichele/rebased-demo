@@ -1,4 +1,5 @@
-// Copyright (c) IOTA Stiftung
+// Copyright (c) IOTA
+// Modifications Copyright (c) 2024 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
 module token_transfer_tutorial::my_token {
@@ -22,15 +23,15 @@ module token_transfer_tutorial::my_token {
         transfer::public_transfer(coin, recipient)
     }
     public entry fun transfer(
-        sender: &mut Coin<MY_TOKEN>, 
+        token: &mut Coin<MY_TOKEN>, 
         amount: u64, 
         recipient: address, 
         ctx: &mut TxContext,
     ) {
-        let coin_to_transfer = coin::split(sender, amount, ctx);
+        let coin_to_transfer = coin::split(token, amount, ctx);
         transfer::public_transfer(coin_to_transfer, recipient);
     }
-    public entry fun balances(sender: &mut Coin<MY_TOKEN>): u64 {
-        sender.balance;
+    public fun balances(token: &mut Coin<MY_TOKEN>): u64 {
+        token.balance
     }
 }
