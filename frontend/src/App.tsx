@@ -1,12 +1,15 @@
 import { ConnectButton } from "@iota/dapp-kit";
-import { Box, Container, Flex, Heading, TextField, Text } from "@radix-ui/themes";
-import WalletStatus  from "./WalletStatus";
+import { Box, Container, Flex, Heading } from "@radix-ui/themes";
+import Buttons  from "./components/Buttons";
 import { useState } from "react";
+import Balance from "./components/Balance";
+import Transfer from "./components/Transfer";
+import Mint from "./components/Mint";
 
 function App() {
-  const [showTextField,setShowTextField] = useState<boolean>(false);
-  const [showBalance,setShowBalance] = useState<boolean>( true);
-  const [balance,setBalance] = useState<number>(120);
+  const [transferField,setTransferField] = useState<boolean>(false);
+  const [mintField,setMintField] = useState<boolean>(false);
+  const [showBalance,setShowBalance] = useState<boolean>( false);
   return (
     <>
       <Flex
@@ -31,21 +34,21 @@ function App() {
           mt="5"
           py="2"
           px="4"
+          mb={"4"}
           style={{ background: "var(--gray-a2)" }}
         >
-          <WalletStatus 
-          showTextField={showTextField}
-          setShowTextField={setShowTextField}
+          <Buttons 
+          transferField={transferField}
+          setTransferField={setTransferField}
           showBalance={showBalance}
           setShowBalance={setShowBalance}
+          mintField={mintField}
+          setMintField={setMintField}  
           />
         </Container>
-        {showBalance && <Flex justify={"center"} mt={"4"}>
-          <Text weight={"bold"} align={"center"}>{balance} IOTA</Text>
-        </Flex>}
-        {showTextField && <Box my={"2"}>
-          <TextField.Root size="3" placeholder="Enter" />
-        </Box>}
+        {showBalance && <Balance/>}
+        {transferField && <Transfer/>}
+        {mintField && <Mint/>}
       </Container>
     </>
   );
