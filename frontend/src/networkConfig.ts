@@ -9,9 +9,9 @@ const { networkConfig, useNetworkVariable, useNetworkVariables } =
     testnet: {
       url: getFullnodeUrl("testnet"),
       variables: {
-        packageId: '<Your_Package_Address>',
-        treasuryCap: '<Your_TreasuryCap_Address>',
-        coinAddress: '<Your_Token_Address>'
+        packageId: '<YOUR_PACKAGE_ADDRESS>',
+        treasuryCap: '<YOUR_TREASURYCAP_ADDRESS>',
+        coinAddress: '<YOUR_TOKEN_ADDRESS>'
       },
     },
     mainnet: {
