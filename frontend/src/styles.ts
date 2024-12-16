@@ -1,0 +1,68 @@
+export default {
+    dialogOverlay: {
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
+        position: "fixed" as "fixed", // Explicitly cast to the string literal type
+        inset: "0", // Use a string value for shorthand CSS properties
+    },
+    dialogContent: {
+        backgroundColor: "#181d27",
+        borderRadius: "12px",
+        boxShadow: "0px 4px 6px 1px #474b53",
+        padding: "24px",
+        maxWidth: "450px",
+        margin: "40px auto",
+        fontFamily: "Arial, sans-serif",
+        position: "fixed" as "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+    },
+    dialogTitle: {
+        marginBottom: "16px",
+        fontSize: "20px",
+        fontWeight: "bold",
+        textAlign: "center" as "center",
+        color: "#FFF",
+    },
+    dialogDescription: {
+        marginBottom: "24px",
+        fontSize: "14px",
+        color: "#FFF",
+        textAlign: "center" as "center",
+    },
+    descriptionBox: {
+        display: "flex" as "flex",
+        flexDirection: "column" as "column",
+        gap: "16px",
+    },
+    input: {
+        padding: "12px",
+        fontSize: "14px",
+        borderRadius: "6px",
+        border: "none",
+        width: "100%",
+        background: "#111114",
+        color: "#FFF",
+    },
+    button: {
+        cursor: "pointer" as "pointer",
+        padding: "12px",
+        backgroundColor: "#3e63dd",
+        color: "white",
+        border: "none",
+        borderRadius: "50px",
+        fontSize: "14px",
+        fontWeight: "bold",
+        textAlign: "center" as "center",
+    },
+    cancelButton: {
+        position: "absolute" as "absolute",
+        top: "16px",
+        right: "16px",
+        background: "none",
+        border: "none",
+        color: "#FFF",
+        cursor: "pointer" as "pointer",
+        fontSize: "18px",
+    },
+};
