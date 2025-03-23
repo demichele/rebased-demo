@@ -20,7 +20,7 @@ const Transfer = ({ setTransferField }: TranferProp) => {
         transfer({
             address,
             setAddress,
-            amount,
+            amount: Number(amount),
             setAmount,
             coinAddress,
             packageId,
